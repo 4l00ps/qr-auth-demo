@@ -29,6 +29,9 @@ public class User {
     @Column(nullable = false, unique = true) // Store SHA-256 hash
     private String dataHash;
 
+    @Column(columnDefinition = "TEXT") // Store QR Code as Base64 string
+    private String qrCode;
+
     // Method to generate SHA-256 hash
     public void generateDataHash() {
         try {
